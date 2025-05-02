@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Karthikeyan | MCA Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    a {
+      color: #fbc4ab;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #f4978e;
+      text-decoration: underline;
+    }
+    .certificate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 10px 0;
+    }
+    .certificate-grid img, .certificate-grid a {
+      width: 100%;
+      height: auto;
+      border: 2px solid #fbc4ab;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .certificate-grid img:hover, .certificate-grid a:hover {
+      transform: scale(1.05);
+      border-color: #f4978e;
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .lightbox img, .lightbox embed {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    /* Download link style */
+    .download-link {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: underline;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    
+    /* Resume button style */
+    .resume-btn {
+      background-color: #fbc4ab;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .resume-btn:hover {
+      background-color: #f4978e;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>Portfolio</h1>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <img src="profile.jpg" alt="Karthikeyan" class="profile-img"/>
+    <h2>Hello, I'm <span>Karthikeyan</span></h2>
+    <p>MCA Graduate | Web & App Developer </p>
+    <a href="#contact" class="cta">Contact Me</a>
+  </section>
+
+  <main class="main-container">
+    <section id="about" class="card-section">
+      <h2>About Me</h2>
+      <p>"I am a passionate MCA graduate with a strong commitment to developing cutting-edge web and mobile applications. My journey has been driven by a deep interest in crafting innovative, scalable, and user-centric solutions that address real-world challenges."</p>
+    </section>
+
+    <section id="skills" class="card-section">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Python</span>
+        <span>SQL</span>
+      </div>
+    </section>
+
+    <section id="projects" class="card-section">
+      <h2>Projects</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <h3>Hospital Management System</h3>
+          <p>"Our Android-based hospital management app is designed to streamline hospital operations."</p>
+        </div>
+        <div class="project-card">
+          <h3>Smoke Detector</h3>
+          <p>"Our IoT-based smoke detection system leverages advanced sensors and cloud technology."</p>
+        </div>
+        <div class="project-card">
+          <h3>Voice Activated Sales Assistant</h3>
+          <p>"The Python-based jewelry shop admin interface simplifies inventory and sales management."</p>
+        </div>
+        <div class="project-card">
+          <h3>Stock Management</h3>
+          <p>"The React Native inventory management app provides businesses with an efficient solution."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="card-section">
+      <h2>Certificates</h2>
+      <div class="certificate-grid">
+        <img src="certificates/cert1.jpg" alt="Certificate 1" onclick="openLightbox(this.src)" />
+        <img src="certificates/cert2.jpg" alt="Certificate 2" onclick="openLightbox(this.src)" />
+        <img src="certificates/cert3.jpg" alt="Certificate 3" onclick="openLightbox(this.src)" />
+        <img src="certificates/cert4.jpg" alt="Certificate 4" onclick="openLightbox(this.src)" />
+        <img src="certificates/cert5.jpg" alt="Certificate 5" onclick="openLightbox(this.src)" />
+        <img src="certificates/cert6.jpg" alt="Certificate 6" onclick="openLightbox(this.src)" />
+        <img src="certificates/cert7.jpg" alt="Certificate 7" onclick="openLightbox(this.src)" />
+        <img src="certificates/cert8.jpg" alt="Certificate 8" onclick="openLightbox(this.src)" />
+        <img src="certificates/cert9.jpg" alt="Certificate 9" onclick="openLightbox(this.src)" />
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="card-section">
+      <h2>Contact Me</h2>
+      <div class="contact-info">
+        <p><strong>Email:</strong> kingkarthick199@gmail.com</p>
+        <p><strong>Phone:</strong> +91 95971 41754</p>
+        <p><strong>Location:</strong> 93/84/3/1 Rajiv Nagar 4th Street East, Tuticorin 628008</p>
+
+        <div class="social-links" style="margin-top: 20px;">
+          <p><strong>GitHub:</strong> <a href="https://github.com/Kingkarthick-199" target="_blank">https://github.com/Kingkarthick-199</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/karthikeyan-v-92b3b124a/" target="_blank">https://www.linkedin.com/in/karthikeyan-v-92b3b124a/</a></p>
+        </div>
+
+        <!-- Resume Download Button -->
+        <button class="resume-btn" onclick="openResumeLightbox()">Download Resume</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">✖</span>
+    <img id="lightbox-image" src="" alt="Certificate Image"/>
+    <!-- Embed PDF for Resume -->
+    <embed id="lightbox-pdf" src="" type="application/pdf" width="100%" height="100%" style="display:none;"/>
+    <a id="download-link" href="" download="resume.pdf" class="download-link">Download Resume</a> <!-- Download Link -->
+  </div>
+
+  <script>
+    // Open lightbox with certificate image or PDF
+    function openLightbox(src) {
+      const lightboxImage = document.getElementById("lightbox-image");
+      const lightboxPDF = document.getElementById("lightbox-pdf");
+      if (src.endsWith(".pdf")) {
+        lightboxPDF.style.display = "block";
+        lightboxPDF.src = src;
+        lightboxImage.style.display = "none";
+      } else {
+        lightboxImage.style.display = "block";
+        lightboxImage.src = src;
+        lightboxPDF.style.display = "none";
+      }
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    // Open the resume PDF in the lightbox
+    function openResumeLightbox() {
+      const resumePDFSrc = "resume.pdf"; // Your resume PDF link
+      const lightboxPDF = document.getElementById("lightbox-pdf");
+      const lightboxImage = document.getElementById("lightbox-image");
+      const downloadLink = document.getElementById("download-link");
+
+      lightboxImage.style.display = "none"; // Hide image view
+      lightboxPDF.style.display = "block"; // Show PDF view
+      lightboxPDF.src = resumePDFSrc; // Set the PDF source
+      downloadLink.href = resumePDFSrc; // Set download link
+
+      document.getElementById("lightbox").style.display = "flex"; // Open the lightbox
+    }
+
+    // Close lightbox
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+</body>
+</html>
